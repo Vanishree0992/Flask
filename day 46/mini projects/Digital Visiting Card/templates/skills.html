@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skills</title>
+</head>
+<body>
+  <h1>Skills for {{ name.title() }}</h1>
+  <ul>
+    {% for skill in skills %}
+      <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

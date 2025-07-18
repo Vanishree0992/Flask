@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Picker</title>
+</head>
+<body>
+    <h2>Select a Genre</h2>
+    <form method="POST">
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre">
+            {% for genre in genres %}
+                <option value="{{ genre }}">{{ genre }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show Movies</button>
+    </form>
+</body>
+</html>

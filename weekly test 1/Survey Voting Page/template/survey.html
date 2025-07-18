@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Survey{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <p>Which programming language do you prefer?</p>
+    <input type="radio" name="vote" value="Python" required> Python<br>
+    <input type="radio" name="vote" value="JavaScript"> JavaScript<br>
+    <input type="radio" name="vote" value="Java"> Java<br>
+    <input type="radio" name="vote" value="Other"> Other<br><br>
+    <button type="submit">Submit Vote</button>
+</form>
+{% endblock %}

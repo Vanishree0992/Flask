@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Poll</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Do you like Python?</h2>
+        <form method="POST">
+            <label><input type="radio" name="vote" value="Yes" required> Yes</label><br>
+            <label><input type="radio" name="vote" value="No"> No</label><br><br>
+            <button type="submit">Submit Vote</button>
+        </form>
+    </div>
+</body>
+</html>

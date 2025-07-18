@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poll Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Thank You for Voting!</h2>
+
+        <div class="result-box">
+            <p>Your choice:</p>
+            {% if choice == 'Yes' %}
+                <div class="highlight yes">✔ Yes</div>
+            {% elif choice == 'No' %}
+                <div class="highlight no">✘ No</div>
+            {% else %}
+                <div>No valid choice submitted.</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

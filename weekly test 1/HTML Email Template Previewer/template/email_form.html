@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Create Email{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <label>Email Title:</label><br>
+    <input type="text" name="title" required><br><br>
+
+    <label>Email Body (use {{ '{{ name' }}}}, {{ '{{ product' }}}}, etc.):</label><br>
+    <textarea name="body" rows="10" cols="60" required></textarea><br><br>
+
+    <button type="submit">Preview</button>
+</form>
+{% endblock %}

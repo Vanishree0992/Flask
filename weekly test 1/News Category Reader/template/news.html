@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category }} News{% endblock %}
+
+{% block content %}
+<h2>{{ category }} News</h2>
+
+{% if news_list %}
+    <ul>
+        {% for news in news_list %}
+            <li>{{ news }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No news available for this category.</p>
+{% endif %}
+{% endblock %}

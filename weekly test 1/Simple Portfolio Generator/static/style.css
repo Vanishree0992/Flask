@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Resume Form{% endblock %}
+{% block content %}
+<h2>Resume Builder</h2>
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Experience:</label><br>
+    <textarea name="experience" rows="6" required></textarea><br><br>
+
+    <button type="submit">Generate Resume</button>
+</form>
+{% endblock %}

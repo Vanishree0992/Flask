@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Your Bio Card{% endblock %}
+{% block content %}
+<h2>{{ name }}'s Bio Card</h2>
+<p><strong>Age:</strong> {{ age }}</p>
+<p><strong>Hobbies:</strong></p>
+<ul>
+    {% for hobby in hobbies %}
+        <li>{{ hobby }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('user_form') }}">Back</a>
+{% endblock %}

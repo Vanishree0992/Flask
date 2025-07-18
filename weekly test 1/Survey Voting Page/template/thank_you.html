@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block content %}
+<h2>Thank you for your vote!</h2>
+
+{% if choice == 'Python' %}
+<p>Great choice! Python is versatile and beginner-friendly.</p>
+{% elif choice == 'JavaScript' %}
+<p>JavaScript powers the web — solid pick!</p>
+{% elif choice == 'Java' %}
+<p>Java is a classic with strong enterprise use.</p>
+{% elif choice == 'Other' %}
+<p>Nice! Exploring other languages is always interesting.</p>
+{% else %}
+<p>No valid vote received.</p>
+{% endif %}
+
+<a href="{{ url_for('survey') }}">Vote again</a>
+{% endblock %}

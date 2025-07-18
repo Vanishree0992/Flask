@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Home - Portfolio Generator{% endblock %}
+{% block content %}
+<h1>Create Your Portfolio</h1>
+<form method="POST" action="{{ url_for('create_profile') }}">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+    
+    <label>Skills (comma-separated):</label><br>
+    <input type="text" name="skills" required><br><br>
+    
+    <label>Bio:</label><br>
+    <textarea name="bio" required></textarea><br><br>
+    
+    <button type="submit">Generate Portfolio</button>
+</form>
+{% endblock %}

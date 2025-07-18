@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Color Preview{% endblock %}
+{% block content %}
+<h2>Color Picker Preview</h2>
+<form method="POST">
+    <input type="text" name="color" placeholder="Enter color name or #code" value="{{ selected_color }}">
+    <button type="submit">Preview</button>
+</form><div class="color-box" style="background-color: #3498db ;"></div>
+
+<p>Current Color: <strong>{{ selected_color }}</strong></p>
+{% endblock %}

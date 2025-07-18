@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Choose Genre{% endblock %}
+{% block content %}
+<h2>Book Recommendation</h2>
+<form method="POST">
+    <label>Enter your favorite genre (e.g., Fiction, Sci-Fi, Mystery):</label><br>
+    <input type="text" name="genre" required>
+    <button type="submit">Get Recommendations</button>
+</form>
+{% endblock %}

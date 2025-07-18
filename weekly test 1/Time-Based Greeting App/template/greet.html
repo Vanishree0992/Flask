@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting</title>
+</head>
+<body>
+    <h1>{{ greeting }}!</h1>
+    <p>The time you entered is {{ hour }}:00</p>
+
+    {% if 5 <= hour <= 11 %}
+        <p>☀️ It's a fresh morning!</p>
+    {% elif 12 <= hour <= 17 %}
+        <p>🌤️ A productive afternoon!</p>
+    {% else %}
+        <p>🌙 Time to relax, it's night.</p>
+    {% endif %}
+</body>
+</html>

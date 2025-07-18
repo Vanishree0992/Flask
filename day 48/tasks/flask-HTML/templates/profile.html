@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ title }}</title></head>
+<body>
+
+    {% if is_logged_in %}
+        <button>Logout</button>
+    {% else %}
+        <button>Login</button>
+    {% endif %}
+
+    <h2>User Profile</h2>
+    {% if user %}
+    <ul>
+        <li>Name: {{ user.name if user.name else user['name'] }}</li>
+        <li>Email: {{ user.email if user.email else user['email'] }}</li>
+        <li>Age: {{ user.age if user.age else user['age'] }}</li>
+        <li>City: {{ user.city if user.city else user['city'] }}</li>
+    </ul>
+    {% endif %}
+
+    {% if name and age and city %}
+        <div style="border:1px solid #000; padding:10px;">
+            <h3>{{ name }}</h3>
+            <p>Age: {{ age }}</p>
+            <p>City: {{ city }}</p>
+        </div>
+    {% endif %}
+
+    {% if current_time %}
+        <p>Current time: {{ current_time.strftime('%d-%m-%Y %I:%M %p') }}</p>
+    {% endif %}
+
+</body>
+</html>

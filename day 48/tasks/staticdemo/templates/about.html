@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+    <h1>About Our Project</h1>
+    <p>This project demonstrates how to use static files in Flask.</p>
+
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+{% endblock %}

@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 30px;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.faq-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.faq-card.unanswered {
+  background: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.answer {
+  margin-top: 10px;
+}
+
+.answer.missing {
+  color: #777;
+  font-style: italic;
+}

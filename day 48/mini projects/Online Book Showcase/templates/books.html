@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if books %}
+        <div class="book-list">
+            {% for book in books %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + book.image) }}" alt="Book Cover">
+                    <h3>{{ book.title }}</h3>
+                    <p>by {{ book.author }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="message">No books available.</div>
+    {% endif %}
+{% endblock %}

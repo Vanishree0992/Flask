@@ -1,0 +1,13 @@
+body {
+    background-color: #f4f6f8;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3) !important;
+}

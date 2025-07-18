@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}User Testimonials{% endblock %}
+
+{% block content %}
+<h2>User Testimonials</h2>
+<div class="testimonial-grid">
+    {% for feedback in feedbacks %}
+        <div class="testimonial-card">
+            <img src="{{ url_for('static', filename='images/' ~ feedback.photo) }}" alt="{{ feedback.name }}" class="user-photo">
+            <h3>{{ feedback.name }}</h3>
+            <p>"{{ feedback.comment }}"</p>
+            <div class="stars">
+                {% for _ in range(feedback.rating) %}
+                    <img src="{{ url_for('static', filename='images/star.jpg') }}" alt="star" class="star-icon">
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

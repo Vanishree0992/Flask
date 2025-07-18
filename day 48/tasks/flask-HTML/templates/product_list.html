@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>{{ title }}</title></head>
+<body>
+    {% if products %}
+        <h2>Product List</h2>
+        <ul>
+        {% for p in products %}
+            <li><strong>{{ p.name }}:</strong> ₹{{ p.price }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if price %}
+        <h3>Price Breakdown</h3>
+        <p>Base Price: ₹{{ price }}</p>
+        <p>Tax: ₹{{ tax }}</p>
+        <p><strong>Total: ₹{{ total }}</strong></p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+.card-title {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+}

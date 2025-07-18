@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="mb-4">Recommended Movies</h2>
+    <div class="row">
+        {% for movie in movies %}
+            <div class="col-md-4 mb-4">
+                <div class="card shadow">
+                    <img src="{{ url_for('static', filename='images/' + movie.poster) }}" class="card-img-top" alt="{{ movie.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ movie.title }}
+                            {% if movie.new %}
+                                <span class="badge bg-danger ms-2">New Release</span>
+                            {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% for i in range(movie.rating) %}
+                                <img src="{{ url_for('static', filename='images/star.png') }}" alt="Star" width="20">
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

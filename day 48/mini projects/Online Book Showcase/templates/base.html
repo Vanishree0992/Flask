@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Book Showcase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f2f2f2; }
+        header, footer { background: #333; color: white; text-align: center; padding: 10px 0; }
+        .book-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+        .card { background: white; padding: 15px; border-radius: 8px; width: 200px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card h3 { margin: 10px 0 5px; font-size: 18px; }
+        .card p { color: #555; font-size: 14px; }
+        .message { text-align: center; font-size: 18px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 Online Book Showcase</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Book Showcase</p>
+    </footer>
+</body>
+</html>

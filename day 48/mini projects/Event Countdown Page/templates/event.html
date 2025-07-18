@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event_name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ event_name }}</h1>
+
+    {% if event_started %}
+        <p class="started-msg">🎉 The event has already started!</p>
+    {% else %}
+        <p id="countdown">Loading countdown...</p>
+        <script>
+            const eventDate = new Date("{{ event_datetime }}");
+        </script>
+    {% endif %}
+{% endblock %}

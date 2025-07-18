@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}FAQs{% endblock %}
+{% block content %}
+<div class="faq-container">
+  {% for faq in faqs %}
+    <div class="faq-card {% if not faq.answer %}unanswered{% endif %}">
+      <h3 class="question" onclick="toggleAnswer(this)">
+        {{ faq.question }}
+      </h3>
+      {% if faq.answer %}
+        <p class="answer" style="display: none;">{{ faq.answer }}</p>
+      {% else %}
+        <p class="answer missing">Answer coming soon.</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

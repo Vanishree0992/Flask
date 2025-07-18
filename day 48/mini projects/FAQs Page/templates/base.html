@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}FAQs{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='faq.js') }}" defer></script>
+</head>
+<body>
+  <header><h1>Company FAQs</h1></header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer><p>&copy; 2025 Company</p></footer>
+</body>
+</html>

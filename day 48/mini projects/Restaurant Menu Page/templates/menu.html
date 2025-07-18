@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="mb-4">Our Menu</h2>
+
+    {% for category, dishes in menu.items() %}
+        <h3 class="mt-4">{{ category }}</h3>
+        <div class="row">
+            {% for dish in dishes %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 {% if not dish.available %}border-danger{% endif %}">
+                        <img src="{{ url_for('static', filename='images/' + dish.image) }}" class="card-img-top" alt="{{ dish.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ dish.name }}</h5>
+                            {% if not dish.available %}
+                                <p class="text-danger fw-bold">Out of Stock</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}

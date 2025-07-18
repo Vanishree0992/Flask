@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="mb-4">Latest Blog Posts</h2>
+
+    <div class="row">
+        {% for blog in blogs %}
+            <div class="col-md-6 mb-4">
+                <div class="card shadow {% if blog.featured %}border-primary featured{% endif %}">
+                    <img src="{{ url_for('static', filename='images/' + blog.image) }}" class="card-img-top" alt="{{ blog.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ blog.title }}</h5>
+                        <p class="card-subtitle mb-2 text-muted">By {{ blog.author }}</p>
+                        <p class="card-text">{{ blog.snippet }}</p>
+                        {% if blog.featured %}
+                            <span class="badge bg-primary">Featured</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

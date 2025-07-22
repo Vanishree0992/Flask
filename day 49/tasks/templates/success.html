@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Success!</h2>
+  <p>Your submission:</p>
+  <ul>
+    <li>Name: {{ form.name.data }}</li>
+    <li>Email: {{ form.email.data }}</li>
+    <li>Gender: {{ form.gender.data }}</li>
+    <li>Country: {{ form.country.data }}</li>
+    <li>Message: {{ form.message.data }}</li>
+    <li>Age: {{ form.age.data }}</li>
+    <li>Birthdate: {{ form.birthdate.data }}</li>
+  </ul>
+{% endblock %}

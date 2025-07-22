@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Event RSVP</h2>
+<form method="POST" class="form-box">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class="form-control") }}
+        {% for error in form.name.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(class="form-control") }}
+        {% for error in form.email.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group checkbox">
+        {{ form.will_attend() }}
+        {{ form.will_attend.label }}
+    </div>
+
+    <div class="form-group">
+        {{ form.submit(class="btn") }}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Gym Membership Signup{% endblock %}
+{% block content %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class="input") }}
+        {% if form.name.errors %}
+            <div class="error">{{ form.name.errors[0] }}</div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        {{ form.age.label }}
+        {{ form.age(class="input") }}
+        {% if form.age.errors %}
+            <div class="error">{{ form.age.errors[0] }}</div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(class="input") }}
+        {% if form.email.errors %}
+            <div class="error">{{ form.email.errors[0] }}</div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        {{ form.plan.label }}
+        {{ form.plan(class="input") }}
+        {% if form.plan.errors %}
+            <div class="error">{{ form.plan.errors[0] }}</div>
+        {% endif %}
+    </div>
+
+    <div class="form-group checkbox">
+        {{ form.accept_terms() }} {{ form.accept_terms.label }}
+        {% if form.accept_terms.errors %}
+            <div class="error">{{ form.accept_terms.errors[0] }}</div>
+        {% endif %}
+    </div>
+
+    {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

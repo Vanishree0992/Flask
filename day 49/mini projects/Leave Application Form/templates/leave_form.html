@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Apply for Leave{% endblock %}
+
+{% block content %}
+<h2>Leave Application Form</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name(class="input") }}
+        {% for error in form.name.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.department.label }}
+        {{ form.department(class="input") }}
+        {% for error in form.department.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.reason.label }}
+        {{ form.reason(class="input") }}
+        {% for error in form.reason.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.start_date.label }}
+        {{ form.start_date(class="input") }}
+        {% for error in form.start_date.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.end_date.label }}
+        {{ form.end_date(class="input") }}
+        {% for error in form.end_date.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

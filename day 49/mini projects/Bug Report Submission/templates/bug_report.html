@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Bug Report Submission</h2>
+<form method="POST" class="form-box">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}<br>
+        {{ form.name(class="form-control") }}
+        {% for error in form.name.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control") }}
+        {% for error in form.email.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.description.label }}<br>
+        {{ form.description(class="form-control", rows="4") }}
+        {% for error in form.description.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.severity.label }}<br>
+        <div class="radio-group">
+            {% for subfield in form.severity %}
+                <label class="radio-inline">
+                    {{ subfield() }} {{ subfield.label.text }}
+                </label>
+            {% endfor %}
+        </div>
+        {% for error in form.severity.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.submit(class="btn") }}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Feedback Form</h2>
+<form method="POST" class="form-box">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.name.label }}<br>
+        {{ form.name(class="form-control") }}
+        {% for error in form.name.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control") }}
+        {% for error in form.email.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.message.label }}<br>
+        {{ form.message(class="form-control", rows="4") }}
+        {% for error in form.message.errors %}
+            <div class="error">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.submit(class="btn") }}
+    </div>
+</form>
+{% endblock %}

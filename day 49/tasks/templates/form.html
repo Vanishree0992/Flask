@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Contact Form</h2>
+
+{% if form.errors %}
+<div class="error-summary">
+  <strong>{{ form.errors|length }} error(s):</strong>
+  <ul>
+    {% for field, errors in form.errors.items() %}
+      {% for error in errors %}
+        <li>{{ field }}: {{ error }}</li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+
+  <p>Name: {{ form.name(size=30) }}<br>
+  {% for error in form.name.errors %}<span class="error">{{ error }}</span>{% endfor %}</p>
+
+  <p>Email: {{ form.email(size=30) }}<br>
+  {% for error in form.email.errors %}<span class="error">{{ error }}</span>{% endfor %}</p>
+
+  <p>Password: {{ form.password(size=30) }}</p>
+  <p>Confirm Password: {{ form.confirm_password(size=30) }}</p>
+
+  <p>Message: {{ form.message(rows=3, cols=40) }}</p>
+
+  <p>Gender: {{ form.gender() }}</p>
+
+  <p>Country: {{ form.country() }}</p>
+
+  <p>Birthdate: {{ form.birthdate() }}</p>
+
+  <p>Age: {{ form.age() }}</p>
+
+  <p>{{ form.accept_terms() }} Accept Terms<br>
+  {% for error in form.accept_terms.errors %}<span class="error">{{ error }}</span>{% endfor %}</p>
+
+  <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}

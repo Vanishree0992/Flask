@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Total Complaints: {{ total }} | Resolved: {{ resolved }}</p>
+
+<table border="1">
+<tr><th>Name</th><th>Message</th><th>Status</th><th>Actions</th></tr>
+{% for c in complaints %}
+<tr>
+    <td>{{ c.name }}</td>
+    <td>{{ c.message }}</td>
+    <td>{{ 'Resolved' if c.resolved else 'Pending' }}</td>
+    <td>
+        {% if not c.resolved %}
+        <a href="{{ url_for('mark_resolved', id=c.id) }}">Mark Resolved</a> |
+        {% endif %}
+        <a href="{{ url_for('delete_complaint', id=c.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

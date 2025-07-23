@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Submit Feedback</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.user_name.label }}<br>{{ form.user_name(size=30) }}<br>
+    {{ form.rating.label }}<br>{{ form.rating() }}<br>
+    {{ form.comment.label }}<br>{{ form.comment(rows=3, cols=40) }}<br><br>
+    {{ form.submit() }}
+</form>
+
+<h2>All Feedback</h2>
+<table border="1">
+<tr><th>Name</th><th>Rating</th><th>Comment</th><th>Actions</th></tr>
+{% for fb in feedbacks %}
+<tr>
+    <td>{{ fb.user_name }}</td>
+    <td>{{ fb.rating }}</td>
+    <td>{{ fb.comment }}</td>
+    <td>
+        <a href="{{ url_for('update_feedback', id=fb.id) }}">Edit</a> |
+        <a href="{{ url_for('delete_feedback', id=fb.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

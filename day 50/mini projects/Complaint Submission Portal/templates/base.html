@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Complaint Portal</title></head>
+<body>
+<h1>📝 Complaint Submission Portal</h1>
+<a href="{{ url_for('submit_complaint') }}">Submit Complaint</a> |
+<a href="{{ url_for('admin_dashboard') }}">Admin Panel</a>
+<hr>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <p><strong>{{ category.title() }}:</strong> {{ message }}</p>
+  {% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>

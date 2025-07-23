@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Members List (Sorted by Join Date)</h2>
+<table border="1">
+<tr><th>Name</th><th>Email</th><th>Join Date</th><th>Action</th></tr>
+{% for member in members %}
+<tr>
+    <td>{{ member.name }}</td>
+    <td>{{ member.email }}</td>
+    <td>{{ member.join_date }}</td>
+    <td>
+        <a href="{{ url_for('delete_member', id=member.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

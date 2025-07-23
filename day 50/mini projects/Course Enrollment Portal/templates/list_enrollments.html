@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>📄 Enrollments</h2>
+<table border="1">
+<tr>
+    <th>Student</th>
+    <th>Course</th>
+    <th>Fee</th>
+    <th>Actions</th>
+</tr>
+{% for e in enrollments %}
+<tr>
+    <td>{{ e.student.name }}</td>
+    <td>{{ e.course.name }}</td>
+    <td>{{ e.course.fee }}</td>
+    <td>
+        <a href="{{ url_for('update_enrollment', id=e.id) }}">Edit</a> |
+        <a href="{{ url_for('delete_enrollment', id=e.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

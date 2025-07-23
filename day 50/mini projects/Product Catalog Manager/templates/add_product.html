@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Add Product</h2>
+<form method="POST">
+    <p>Name: <input type="text" name="name" required></p>
+    <p>Price: <input type="number" step="0.01" name="price" required></p>
+    <p>In Stock: <input type="checkbox" name="in_stock" checked></p>
+    <p>Description: <textarea name="description"></textarea></p>
+    <p><button type="submit">Add</button></p>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>📊 Voting Results</h2>
+<table border="1">
+    <tr>
+        <th>Candidate</th>
+        <th>Party</th>
+        <th>Total Votes</th>
+    </tr>
+    {% for r in results %}
+    <tr>
+        <td>{{ r.name }}</td>
+        <td>{{ r.party }}</td>
+        <td>{{ r.votes }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('vote') }}">⬅ Back to Vote</a>
+{% endblock %}

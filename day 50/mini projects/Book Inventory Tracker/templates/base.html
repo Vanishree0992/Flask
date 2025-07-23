@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Inventory</title>
+</head>
+<body>
+    <h1>📚 Book Inventory Tracker</h1>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+            <p><strong>{{ category.capitalize() }}:</strong> {{ msg }}</p>
+        {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Inventory</title></head>
+<body>
+<h1>📦 Simple Inventory Manager</h1>
+<a href="{{ url_for('index') }}">Home</a>
+<hr>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <p><strong>{{ category.title() }}:</strong> {{ message }}</p>
+  {% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>

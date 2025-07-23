@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Directory</title>
+</head>
+<body>
+    <h1>📞 Contact Directory</h1>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, msg in messages %}
+            <p><strong>{{ category.capitalize() }}:</strong> {{ msg }}</p>
+        {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>

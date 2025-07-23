@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Submit a Complaint</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }}<br>{{ form.name() }}<br><br>
+    {{ form.message.label }}<br>{{ form.message(rows=4) }}<br><br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

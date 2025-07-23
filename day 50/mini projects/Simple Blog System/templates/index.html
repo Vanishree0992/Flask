@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<a href="{{ url_for('add_post') }}">+ Add New Post</a>
+<ul>
+  {% for post in posts %}
+    <li>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.content }}</p>
+      <small>By {{ post.author }} on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small><br>
+      <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
+      <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+    <hr>
+  {% endfor %}
+</ul>
+{% endblock %}

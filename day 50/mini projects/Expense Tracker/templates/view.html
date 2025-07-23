@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% if grouped %}Expenses Grouped by {{ group_by }}{% else %}All Expenses{% endif %}</h2>
+
+{% if not grouped %}
+<table border="1">
+<tr><th>Name</th><th>Amount</th><th>Category</th><th>Date</th><th>Action</th></tr>
+{% for exp in expenses %}
+<tr>
+    <td>{{ exp.name }}</td>
+    <td>{{ exp.amount }}</td>
+    <td>{{ exp.category }}</td>
+    <td>{{ exp.date }}</td>
+    <td>
+        <a href="{{ url_for('update_expense', id=exp.id) }}">Edit</a> |
+        <a href="{{ url_for('delete_expense', id=exp.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<table border="1">
+<tr><th>{{ group_by }}</th><th>Total Amount</th></tr>
+{% for item in expenses %}
+<tr>
+    <td>{{ item[0] }}</td>
+    <td>{{ item[1] }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock %}

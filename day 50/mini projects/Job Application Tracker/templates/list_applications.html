@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('add_application') }}">➕ Add Application</a>
+
+<h3>Filter by Status:</h3>
+<a href="{{ url_for('list_applications') }}">All</a> |
+<a href="{{ url_for('list_applications', status='Applied') }}">Applied</a> |
+<a href="{{ url_for('list_applications', status='Shortlisted') }}">Shortlisted</a> |
+<a href="{{ url_for('list_applications', status='Rejected') }}">Rejected</a>
+
+<h2>Applications</h2>
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Job Title</th>
+    <th>Status</th>
+    <th>Actions</th>
+</tr>
+{% for app in apps %}
+<tr>
+    <td>{{ app.name }}</td>
+    <td>{{ app.email }}</td>
+    <td>{{ app.job_title }}</td>
+    <td>{{ app.status }}</td>
+    <td>
+        <a href="{{ url_for('update_status', id=app.id) }}">Edit</a> |
+        <a href="{{ url_for('delete_application', id=app.id) }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

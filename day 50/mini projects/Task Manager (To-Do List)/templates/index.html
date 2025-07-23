@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>All Tasks (by Due Date)</h2>
+<form method="POST" action="{{ url_for('delete_done') }}">
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Title</th><th>Due Date</th><th>Status</th><th>Action</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.due_date }}</td>
+            <td>{{ 'Done' if task.is_done else 'Pending' }}</td>
+            <td><a href="{{ url_for('toggle_task', task_id=task.id) }}">
+                Mark as {{ 'Undone' if task.is_done else 'Done' }}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><button type="submit">Delete Completed Tasks</button></p>
+</form>
+{% endblock %}

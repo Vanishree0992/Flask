@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Feedback</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.user_name.label }}<br>{{ form.user_name(size=30) }}<br>
+    {{ form.rating.label }}<br>{{ form.rating() }}<br>
+    {{ form.comment.label }}<br>{{ form.comment(rows=3, cols=40) }}<br><br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

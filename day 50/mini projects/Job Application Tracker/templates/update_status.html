@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Status - {{ application.name }}</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.status.label }} {{ form.status() }}<br>
+    {{ form.submit() }}
+</form>
+<a href="{{ url_for('list_applications') }}">⬅ Back</a>
+{% endblock %}

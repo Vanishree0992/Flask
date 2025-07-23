@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ 'Update' if form.email.data else 'Add' }} Subscriber</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.email.label }}<br>{{ form.email(size=30) }}<br><br>
+    {{ form.plan.label }}<br>{{ form.plan() }}<br><br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

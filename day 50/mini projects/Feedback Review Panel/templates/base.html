@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Feedback Panel</title></head>
+<body>
+<h1>📝 Feedback Review Panel</h1>
+<hr>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <p><strong>{{ category.title() }}:</strong> {{ message }}</p>
+  {% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>

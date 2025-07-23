@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Subscribers</h2>
+<table border="1">
+<tr><th>Email</th><th>Plan</th><th>Date</th><th>Actions</th></tr>
+{% for s in subscribers %}
+<tr>
+  <td>{{ s.email }}</td>
+  <td>{{ s.plan }}</td>
+  <td>{{ s.subscribed_on.strftime('%Y-%m-%d %H:%M') }}</td>
+  <td>
+    <a href="{{ url_for('update_subscriber', id=s.id) }}">Edit</a> |
+    <a href="{{ url_for('delete_subscriber', id=s.id) }}">Delete</a>
+  </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

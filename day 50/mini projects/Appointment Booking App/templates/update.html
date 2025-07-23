@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Status for {{ appointment.name }}</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.status.label }}<br>{{ form.status() }}<br><br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

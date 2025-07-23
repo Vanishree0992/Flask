@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student DB</title></head>
+<body>
+  <h1>Student Database</h1>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+     <p style="color: '{{ 'green' if category == 'success' else 'blue' if category == 'info' else 'red' }}';">
+  {{ message }}
+</p>
+{% endfor %}
+  {% endwith %}
+  <a href="{{ url_for('index') }}">Home</a> | 
+  <a href="{{ url_for('add_student') }}">Register Student</a>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

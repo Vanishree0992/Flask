@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Library Member System</title></head>
+<body>
+    <h1>📚 Library Member System</h1>
+    <a href="{{ url_for('add_member') }}">➕ Add Member</a> |
+    <a href="{{ url_for('view_members') }}">📋 View Members</a>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p><strong>{{ category.title() }}:</strong> {{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>

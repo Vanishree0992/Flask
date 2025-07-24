@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Events</h2>
+<ul>
+    {% for event in events %}
+        <li>
+            {{ event.name }} - {{ event.date.strftime('%Y-%m-%d') }}
+            <form method="POST" action="{{ url_for('rsvp', event_id=event.id) }}">
+                <button type="submit">RSVP</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

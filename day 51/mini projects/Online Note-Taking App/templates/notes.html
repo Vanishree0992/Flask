@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Notes</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label }} {{ form.title() }}<br>
+    {{ form.content.label }} {{ form.content() }}<br>
+    {{ form.submit() }}
+</form>
+
+<ul>
+{% for note in notes %}
+    <li><strong>{{ note.title }}</strong>: {{ note.content }}
+        <a href="{{ url_for('delete_note', note_id=note.id) }}">[Delete]</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

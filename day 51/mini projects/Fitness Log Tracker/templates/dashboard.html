@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ current_user.username }}!</h2>
+<p>Last Workout Type: {{ last_type }}</p>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.workout_type.label }} {{ form.workout_type() }}<br>
+    {{ form.steps.label }} {{ form.steps() }}<br>
+    {{ form.hours.label }} {{ form.hours() }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

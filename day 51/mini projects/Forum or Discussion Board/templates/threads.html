@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Threads</h2>
+{% if threads %}
+  <ul>
+    {% for t in threads %}
+      <li><a href="{{ url_for('thread_detail', tid=t.id) }}">{{ t.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No threads yet.</p>
+{% endif %}
+{% endblock %}

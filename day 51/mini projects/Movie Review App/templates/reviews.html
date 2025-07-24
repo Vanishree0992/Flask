@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Movie Reviews</h2>
+{% for review in reviews %}
+    <div class="review">
+        <p><strong>Rating:</strong> {{ review.rating }}/5</p>
+        <p>{{ review.comment }}</p>
+        <hr>
+    </div>
+{% else %}
+    <p>No reviews yet.</p>
+{% endfor %}
+{% endblock %}

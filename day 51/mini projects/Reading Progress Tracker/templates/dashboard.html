@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ current_user.username }}</h2>
+<p>Last viewed book: {{ last_book or 'None' }}</p>
+<h3>Add Book</h3>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label }} {{ form.title() }}<br>
+    {{ form.total_pages.label }} {{ form.total_pages() }}<br>
+    {{ form.submit() }}
+</form>
+
+<h3>Your Books</h3>
+<ul>
+    {% for book in books %}
+        <li>
+            <a href="{{ url_for('book_detail', book_id=book.id) }}">
+                {{ book.title }} ({{ book.pages_read }}/{{ book.total_pages }})
+            </a>
+        </li>
+    {% else %}
+        <li>No books added yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

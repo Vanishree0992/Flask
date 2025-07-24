@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+    box-shadow: 5px 2px 2px gray;
+}
+
+nav {
+    background-color: antiquewhite;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: brown;
+}
+
+#flashes {
+    color: green;
+    font-weight: bold;
+}

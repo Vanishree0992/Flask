@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Workout History</h2>
+{% if logs %}
+<table>
+    <tr>
+        <th>Workout Type</th>
+        <th>Steps</th>
+        <th>Hours</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.workout_type }}</td>
+        <td>{{ log.steps }}</td>
+        <td>{{ log.hours }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No workout logs yet.</p>
+{% endif %}
+{% endblock %}

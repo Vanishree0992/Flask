@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ action }} Product</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.name.label }}<br>{{ form.name() }}<br>
+  {{ form.price.label }}<br>{{ form.price() }}<br>
+  {{ form.description.label }}<br>{{ form.description(rows=4) }}<br>
+  {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

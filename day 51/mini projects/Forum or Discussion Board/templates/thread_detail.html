@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ thread.title }}</h2>
+<p>{{ thread.body }}</p>
+<hr>
+<h3>Comments</h3>
+{% for c in thread.comments %}
+  <p>{{ c.body }}</p><hr>
+{% else %}
+  <p>No comments yet.</p>
+{% endfor %}
+<h4>Add Comment</h4>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  {{ form.body.label }}<br>{{ form.body(rows=4) }}<br>
+  {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

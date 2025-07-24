@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Borrowed Books</h2><ul>
+{% for r in borrows %}
+  <li>{{ r.book.title }} by {{ r.user.username }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

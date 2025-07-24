@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Search Travel Plans by Country</h2>
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.place.label }} {{ form.place() }}
+    {{ form.submit() }}
+</form>
+
+{% if last %}
+    <h3>Results for: {{ last }}</h3>
+    {% if results %}
+        <ul>
+            {% for plan in results %}
+                <li>{{ plan.date }} - {{ plan.place }}: {{ plan.reason }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endif %}
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}

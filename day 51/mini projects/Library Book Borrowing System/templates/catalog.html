@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Book Catalog</h2><ul>
+{% for b in books %}
+  <li>{{ b.title }}<a href="{{ url_for('borrow', bid=b.id) }}" class="btn-small">Borrow</a></li>
+{% endfor %}
+</ul>
+{% if recent %}
+  <h3>Recently Borrowed:</h3><ul>{% for t in recent %}<li>{{t}}</li>{% endfor %}</ul>
+{% endif %}
+{% endblock %}

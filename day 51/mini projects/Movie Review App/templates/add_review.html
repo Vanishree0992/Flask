@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add a Review</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.rating.label }}<br>
+    {{ form.rating() }}<br>
+    {{ form.comment.label }}<br>
+    {{ form.comment() }}<br>
+    {{ form.submit(class="btn") }}
+</form>
+{% endblock %}

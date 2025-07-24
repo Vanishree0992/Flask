@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container">
+    <h2>{{ 'Edit Task' if form.title.data else 'Add Task' }}</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}<br>
+        {{ form.title(size=32) }}<br>
+        {{ form.due_date.label }}<br>
+        {{ form.due_date() }}<br>
+        {{ form.completed.label }} {{ form.completed() }}<br>
+        {{ form.submit(class="btn") }}
+    </form>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<script>
+  const userId = "{{ user_id }}";
+  const userApiUrl = "{{ url_for('api_users') }}";
+</script>
+
+<h2>Users Table</h2>
+<table border="1" id="userTable">
+  <thead><tr><th>ID</th><th>Name</th><th>Status</th></tr></thead>
+  <tbody>
+    {% for u in users %}
+      <tr data-userid="{{ u.id }}">
+        <td>{{ u.id }}</td>
+        <td>{{ u.name }}</td>
+        <td>
+          <span class="badge {{ 'bg-success' if u.status == 'active' else 'bg-secondary' }}">
+            {{ u.status }}
+          </span>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h3>Filter by Name:</h3>
+<select id="filterDropdown">
+  <option value="all">All</option>
+  {% for u in users %}
+    <option value="{{ u.name }}">{{ u.name }}</option>
+  {% endfor %}
+</select>
+
+<h2 class="mt-4">Chart</h2>
+<canvas id="userChart" width="400" height="200"></canvas>
+
+<h2 class="mt-4">Product Details</h2>
+<div id="productSection">
+  <p>Click a button below to load product info</p>
+</div>
+{% for p in ["Laptop", "Mouse", "Keyboard"] %}
+  <button class="product-btn" data-product="{{ p }}">{{ p }}</button>
+{% endfor %}
+
+{% endblock %}

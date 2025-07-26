@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .flash-alert {
+      transition: opacity 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5 text-center">
+    <h1 class="mb-4">{{ title }}</h1>
+
+    <h3>Active Users: 
+      <span id="userCountBadge" class="badge bg-primary">--</span>
+    </h3>
+
+    <!-- Flash alert -->
+    <div id="flashAlert" class="alert alert-success mt-4 flash-alert d-none" role="alert">
+      🎉 New user(s) joined!
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

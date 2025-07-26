@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #timeDisplay {
+      transition: opacity 0.3s ease-in-out;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center mt-5">
+    <h2 class="mb-4">{{ title }}</h2>
+    <div class="card p-4 shadow-sm">
+      <h4 class="mb-3">Current Server Time</h4>
+      <span id="timeDisplay" class="badge bg-success p-3">--:--:--</span>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
